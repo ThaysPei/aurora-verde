@@ -12,17 +12,11 @@
 
 ## 🚀 Funcionalidades
 
-- Exibição do logotipo e nome da loja
-- Campo de busca com ícone
-- Ícone de carrinho com contador de itens
-- Exibição do valor total do carrinho
-- Componentização com React
-- Estilização com CSS externo
-- Importação de imagens e ícones personalizados
-
+- em progresso
 ---
 
 ## 🧩 Estrutura de Pastas
+```
 /aurora-verde
 ├── public/
 ├── src/
@@ -38,7 +32,7 @@
 ├── vite.config.js
 ├── package.json
 └── README.md
-
+```
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -56,5 +50,4 @@
 1. **Clone o repositório:**
    ```bash
    git clone https://github.com/ThaysPei/aurora-verde.git
-
 
