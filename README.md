@@ -1,12 +1,60 @@
-# React + Vite
+# 🌿 Aurora Verde
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Aurora Verde** é uma interface de e-commerce sustentável focada em produtos ecológicos e orgânicos. O projeto foi desenvolvido com React e tem como objetivo exercitar conceitos de componentes, manipulação de estado com `useState` e estilização com CSS.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Preview
 
-## Expanding the ESLint configuration
+![Preview do Projeto](https://github.com/ThaysPei/aurora-verde/blob/main/src/assets/imagemAurora.jpeg)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Funcionalidades
+
+- Exibição do logotipo e nome da loja
+- Campo de busca com ícone
+- Ícone de carrinho com contador de itens
+- Exibição do valor total do carrinho
+- Componentização com React
+- Estilização com CSS externo
+- Importação de imagens e ícones personalizados
+
+---
+
+## 🧩 Estrutura de Pastas
+/aurora-verde
+├── public/
+├── src/
+│ ├── assets/
+│ │ ├── bolsa2.png
+│ │ ├── coracao.png
+│ │ └── imagemAurora.jpeg
+│ ├── components/
+│ │ ├── Header.jsx
+│ │ └── Header.css
+│ ├── App.jsx
+│ └── index.html
+├── vite.config.js
+├── package.json
+└── README.md
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- React
+- JavaScript (ES6+)
+- CSS3
+- Vite
+- Font Awesome Icons
+
+---
+
+## 📦 Como rodar o projeto localmente
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/ThaysPei/aurora-verde.git
+
+
