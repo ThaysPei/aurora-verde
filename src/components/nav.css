@@ -1,0 +1,38 @@
+.nav-container{
+    display: flex;
+    width: 100vw;
+    height: 40px;
+    background: rgb(37, 37, 37);
+   
+}
+.nav-list{
+    display: flex;
+    margin-left: 10%;
+    list-style-type: none;
+    justify-content:center;
+    align-items: center;
+    gap: 25px;
+    font-size: 15px;
+      
+}
+.nav-list p{
+   margin-left: 400px;
+   margin-top: 5px;
+    
+}
+.nav-list a{
+    text-decoration: none;
+    color: gainsboro;
+}
+.nav-list a:hover{
+    color: white;
+}
+.telefone{
+    margin-left: 400px;
+    cursor: pointer;
+    color: gainsboro;
+}
+.icon-search{
+    color: gainsboro;
+    margin-right: 5px;
+}
