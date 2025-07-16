@@ -7,6 +7,7 @@ import logo3 from '../assets/coracao.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
+
 function Header() {
   const [itemCount, setItemCount] = useState(2); // Exemplo: 2 itens no carrinho
   const [total, setTotal] = useState(57.00);     // Exemplo: total de R$ 57,00
