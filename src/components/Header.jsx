@@ -27,7 +27,7 @@ function Header() {
           </div>
           <button type="submit">Search</button>   
         </form>
-
+    
         <img src={logo3} alt="Logo3" className="logo terceira-logo" /> 
         
         <div className='cart-infor'>   
@@ -48,9 +48,9 @@ function Header() {
             <strong>${total.toFixed(2)}</strong>
           </div>
         </div>
-
+            </div>
       </div>
-    </div>
+    
   );
 }
 
