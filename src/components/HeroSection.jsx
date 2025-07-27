@@ -1,51 +1,39 @@
-import './HeroSection.css';
-import bannerImg from '../assets/banner-img.jpg'; // substitua pela imagem certa
+import React from "react";
+import "./HeroSection.css";
+import heroImg from "../assets/hero-image.png"; // imagem principal
+import heroImg1 from "../assets/hero-image2.png";
+import heroImg2 from "../assets/hero-image3.png";
 
-export default function HeroSection() {
+
+
+const HeroSection = () => {
   return (
     <section className="hero-section">
-      <div className="hero-main">
-        <div className="hero-text">
-          <h1>Fresh & Healthy <br /> Organic Food</h1>
-          <p>Sale up to <span className="highlight">30% OFF</span><br />Free shipping on all your order.</p>
-          <button className="btn-shop">Shop now</button>
+      <div className="hero-wrapper">
+        
+        {/* Imagem principal com botão */}
+        <div className="hero-image-container">
+            <a href="#">
+          <img src={heroImg} alt="Promoção orgânicos" className="hero-image" />
+          </a>
         </div>
-        <div className="hero-image">
-          <img src={bannerImg} alt="Organic Basket" />
+        
+        {/* Segunda imagem com botão */}
+        <div className="hero-image-container2">
+            <a href="#">
+          <img src={heroImg1} alt="Promoção orgânicos" className="hero-image2" />
+          </a>
         </div>
-      </div>
 
-      <div className="hero-promos">
-        <div className="promo-card">
-          <h3>SUMMER SALE</h3>
-          <p>75% OFF<br /><small>Only Fruit & Vegetable</small></p>
-          <a href="#">Shop Now →</a>
+       <div className="hero-image-container3">
+       <a href="#">
+       <img src={heroImg2} alt="Promoção orgânicos" className="hero-image3" />
+        </a>
         </div>
-        <div className="promo-card dark">
-          <h3>BEST DEAL</h3>
-          <p>Special Products<br />Deal of the Month</p>
-          <a href="#">Shop Now →</a>
-        </div>
-      </div>
-
-      <div className="hero-benefits">
-        <div className="benefit">
-          <span>🚚</span>
-          <p><strong>Free Shipping</strong><br />on all your order</p>
-        </div>
-        <div className="benefit">
-          <span>💬</span>
-          <p><strong>Support 24/7</strong><br />Instant access to help</p>
-        </div>
-        <div className="benefit">
-          <span>🔒</span>
-          <p><strong>Secure Payment</strong><br />100% protected</p>
-        </div>
-        <div className="benefit">
-          <span>💸</span>
-          <p><strong>Money-Back</strong><br />30 days guarantee</p>
-        </div>
-      </div>
+    </div> 
     </section>
   );
-}
+};
+
+export default HeroSection;
+
