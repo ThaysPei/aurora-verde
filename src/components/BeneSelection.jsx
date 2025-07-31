@@ -11,32 +11,32 @@ function BeneSelection() {
       <div className="benefit-card">
         <img src={truck} alt="Frete Grátis" />
         <div>
-          <h4>Frete Grátis</h4>
-          <p>Enviamos sem custo para todo o Brasil</p>
+          <h4>Free Shipping</h4>
+          <p>Free Shipping on all your order</p>
         </div>
       </div>
 
       <div className="benefit-card">
         <img src={headset} alt="Suporte" />
         <div>
-          <h4>Atendimento 24/7</h4>
-          <p>Suporte disponível sempre que você precisar</p>
+          <h4>Customer Support 24/7</h4>
+          <p>Instant access to Support</p>
         </div>
       </div>
 
       <div className="benefit-card">
         <img src={box} alt="Pagamento Seguro" />
         <div>
-          <h4>Pagamento Seguro</h4>
-          <p>Transações protegidas e criptografadas</p>
+          <h4>Money-Back Guarantee</h4>
+          <p>30 Days Money-Back Guarantee</p>
         </div>
       </div>
 
       <div className="benefit-card">
         <img src={bolsa} alt="Garantia" />
         <div>
-          <h4>Satisfação Garantida</h4>
-          <p>Ou seu dinheiro de volta em até 30 dias</p>
+          <h4>100% Secure Payment</h4>
+          <p>We ensure your Money is save</p>
         </div>
       </div>
     </section>

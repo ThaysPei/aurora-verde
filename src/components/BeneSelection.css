@@ -4,8 +4,8 @@
   align-items: center;
   position: relative;
   left: 100px;
-  top: -440px;
-  padding: 10px;
+  top: -420px;
+  padding: 18px;
   max-width: 1050px;
   background-color: #fff;
   border-radius: 12px;
@@ -29,7 +29,7 @@
 }
 
 .benefit-card h4 {
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
 }
