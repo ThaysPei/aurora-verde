@@ -1,242 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
-* {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
+/* ==========================================
+   HEADER
+   ========================================== */
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  flex-wrap: wrap;
-  position: relative;
-  
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-md, 1rem) var(--spacing-lg, 1.5rem);
+  background: var(--color-white, #fff);
+  border-bottom: 1px solid var(--color-border, #eee);
 }
 
-.container h1 {
-  font-size: 27px;
-  margin-bottom: 10px;
-  position: relative;
-  left: 130px;
-  bottom: 10px;
-
-}
-
-.container form {
+.header-title {
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  margin-left: 200px;
-  
+  gap: var(--spacing-sm, 0.5rem);
+  flex-shrink: 0;
 }
-.input-wrapper{
+
+.logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.header-title h1 {
+  font-size: var(--font-size-xxl, 1.5rem);
+  font-weight: 600;
+  color: var(--color-primary, #00b207);
+}
+
+/* ==========================================
+   FORMULÁRIO DE BUSCA
+   ========================================== */
+.form {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  max-width: 400px;
+}
+
+.input-wrapper {
   position: relative;
+  flex: 1;
 }
 
 .input-wrapper input {
-  width: 280px;
-  height: 36px;
-  padding-left: 35px; /* espaço para a lupa */
-  border: 1px solid gray;
-  border-radius: 5px 0 0 5px;
-  
+  width: 100%;
+  height: 40px;
+  padding: 0 var(--spacing-md, 1rem) 0 40px;
+  border: 1px solid var(--color-border, #ccc);
+  border-right: none;
+  border-radius: var(--radius-sm, 4px) 0 0 var(--radius-sm, 4px);
+  font-size: var(--font-size-sm, 0.875rem);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--color-primary, #00b207);
 }
 
 .search-icon {
   position: absolute;
   top: 50%;
-  left: 10px;
+  left: 12px;
   transform: translateY(-50%);
-  color: gray;
+  color: var(--color-text-light, #666);
   font-size: 14px;
   pointer-events: none;
 }
 
-.container button {
-  width: 60px;
-  height: 36px;
-  background: #00B207;
-  color: white;
-  border: 1px solid gray;
-  border-radius: 0 5px 5px 0;
-
-}
-button:hover {
-  background-color: #009e06;
-  transition: background-color 0.3s ease;
+.form button {
+  height: 40px;
+  padding: 0 var(--spacing-md, 1rem);
+  background: var(--color-primary, #00b207);
+  color: var(--color-white, #fff);
+  border: 1px solid var(--color-primary, #00b207);
+  border-radius: 0 var(--radius-sm, 4px) var(--radius-sm, 4px) 0;
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 500;
+  transition: background-color 0.2s ease;
 }
 
-.logo {
-  width: 30px;
-  margin-right: 10px;
-  position: relative;
-  left: 90px;
-  top: 25px;
-
+.form button:hover {
+  background: var(--color-primary-dark, #009e06);
 }
 
+/* ==========================================
+   ÍCONE FAVORITOS
+   ========================================== */
 .terceira-logo {
   width: 28px;
   height: 28px;
-  margin-left: 5px;
-  position:relative;
-  left: 60px;
-  top: 7px;
-  
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.cart-infor {
+.terceira-logo:hover {
+  transform: scale(1.1);
+}
+
+/* ==========================================
+   CARRINHO
+   ========================================== */
+.cart-info {
   display: flex;
   align-items: center;
-  margin-left: 19px;
+  gap: var(--spacing-sm, 0.5rem);
+  flex-shrink: 0;
 }
 
 .cart-icon-container {
   position: relative;
-}
-
-.cart-icon-container img {
-  width: 28px;
-  position: relative;
-  top: 20px;
-  left: -6px;
-  
-}
-
-.item-count {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: green;
-  color: white;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 12px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.cart-text span{
-   font-size: 12px;
-  margin-left: 8px;
- 
-
-}
-.cart-text strong {
-  font-size: 12px;
-  margin-left: 8px;
-  position: relative;
-  top: 20px;
-  right: 100px;
-  
+.segunda-logo {
+  width: 28px;
+  height: 28px;
 }
 
 .divider {
   width: 1px;
   height: 24px;
-  background-color: #ccc;
-  position: relative;
-  right: 40px;
-  bottom: 13px;
+  background: var(--color-border, #ccc);
+  margin: 0 var(--spacing-sm, 0.5rem);
 }
 
-
-/* ✅ Responsividade */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative; /* Necessário para posicionamento absoluto interno */
-  }
-
-  .container h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    left: 130px;
-    bottom: 0;
-    position: relative;
-  }
-
-  .logo {
-    position: relative;
-    left: 90px;
-    top: 50px;
-    margin-bottom: 10px;
-  }
-
-  .container form {
-    flex-direction: row;
-    margin: 0;
-    margin-bottom: 15px;
-    margin-top: 10px;
-    margin-left: 0;
-  }
-
-  .input-wrapper {
-    position: relative;
-  }
-
-  .input-wrapper input {
-    width: 200px;
-    margin-left: 90px;
-  }
-
-  .search-icon {
-    margin-left: 90px;
-  }
-
-  .container button {
-    width: 60px;
-  }
-
-  /* Ocultar ícone do coração e linha divisória */
-  .terceira-logo,
-  .divider {
-    display: none;
-   
-  }
-
-  /* Reposicionar a bolsa com o item verde para o topo direito */
-  .cart-icon-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-
-  .item-count {
+.item-count {
   position: absolute;
-  bottom: 10px;     /* sobe o badge pra colar na alça da bolsa */
-  left: 10px;   /* encosta o badge no canto direito */
-  background-color: green;
-  color: white;
-  border-radius: 50%;
+  top: -8px;
+  right: -8px;
+  background: var(--color-primary, #00b207);
+  color: var(--color-white, #fff);
+  border-radius: var(--radius-full);
   width: 18px;
   height: 18px;
-  font-size: 12px;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+}
 
-  }
-  .cart-icon-container img {
-  width: 30px;
-  display: block;
+.cart-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cart-text span {
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-light, #666);
+}
+
+.cart-text strong {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-text, #333);
+}
+
+/* ==========================================
+   RESPONSIVO
+   ========================================== */
+@media (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+    gap: var(--spacing-sm, 0.5rem);
+    padding: var(--spacing-sm, 0.5rem);
   }
 
-  .cart-infor {
-    margin-left: 0;
-    justify-content: flex-start;
-    
+  .header-title h1 {
+    font-size: var(--font-size-xl, 1.25rem);
+  }
+
+  .form {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .input-wrapper input {
+    width: 100%;
+  }
+
+  .terceira-logo {
+    display: none;
   }
 
   .cart-text {
+    display: none;
+  }
+
+  .divider {
     display: none;
   }
 }
