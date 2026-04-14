@@ -1,0 +1,163 @@
+/* ==========================================
+   PRODUTOS POPULARES
+   ========================================== */
+.popular-container {
+  padding: var(--spacing-xl, 2rem) var(--spacing-md, 1rem);
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+}
+
+.popular-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg, 1.5rem);
+}
+
+.popular-header h2 {
+  font-size: var(--font-size-xxl, 1.5rem);
+  font-weight: 600;
+  color: var(--color-text, #333);
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--spacing-lg, 1.5rem);
+}
+
+/* ==========================================
+   CARD DO PRODUTO
+   ========================================== */
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md, 1rem);
+  background: var(--color-white, #fff);
+  border: 1px solid var(--color-border, #eee);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.05));
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  border-color: var(--color-primary, #00b207);
+  box-shadow: var(--shadow-green, 0 4px 12px rgba(0, 178, 7, 0.2));
+  transform: translateY(-3px);
+}
+
+/* Ícones no canto superior direito */
+.card-icons {
+  position: absolute;
+  top: var(--spacing-sm, 0.5rem);
+  right: var(--spacing-sm, 0.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 0.25rem);
+  z-index: 1;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--color-white, #fff);
+  border-radius: var(--radius-full);
+  color: var(--color-text-light, #555);
+  font-size: var(--font-size-sm, 0.875rem);
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: var(--color-background, #f5f5f5);
+  transform: scale(1.1);
+}
+
+.icon-btn.favorited {
+  color: var(--color-danger, #e74c3c);
+}
+
+/* Imagem do produto */
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: var(--spacing-md, 1rem);
+}
+
+/* Informações do produto */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 0.25rem);
+  margin-top: auto;
+  padding-bottom: var(--spacing-md, 1rem);
+}
+
+.product-title {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 500;
+  color: var(--color-primary, #00b207);
+  margin: 0;
+}
+
+.product-price {
+  font-size: var(--font-size-md, 1rem);
+  font-weight: 600;
+  color: var(--color-text, #333);
+}
+
+.rating {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-warning, #ffc107);
+}
+
+/* Botão de adicionar ao carrinho */
+.add-to-cart {
+  position: absolute;
+  bottom: var(--spacing-md, 1rem);
+  right: var(--spacing-md, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-border, #dcdcdc);
+  color: var(--color-white, #fff);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-md, 1rem);
+  transition: all 0.2s ease;
+}
+
+.add-to-cart:hover {
+  background: var(--color-primary, #00b207);
+  transform: scale(1.1);
+}
+
+/* ==========================================
+   RESPONSIVO
+   ========================================== */
+@media (max-width: 768px) {
+  .popular-container {
+    padding: var(--spacing-md, 1rem);
+  }
+
+  .popular-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm, 0.5rem);
+  }
+
+  .popular-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--spacing-md, 1rem);
+  }
+
+  .product-card img {
+    height: 140px;
+  }
+}
