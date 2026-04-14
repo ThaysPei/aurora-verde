@@ -139,6 +139,50 @@
 }
 
 /* ==========================================
+   CONTROLES DE QUANTIDADE
+   ========================================== */
+.quantity-controls {
+  position: absolute;
+  bottom: var(--spacing-md, 1rem);
+  right: var(--spacing-md, 1rem);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs, 0.25rem);
+  background: var(--color-white, #fff);
+  border: 2px solid var(--color-primary, #00b207);
+  border-radius: 20px;
+  padding: var(--spacing-xs, 0.25rem);
+}
+
+.quantity-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--color-primary, #00b207);
+  color: var(--color-white, #fff);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-md, 1rem);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.quantity-btn:hover {
+  background: var(--color-primary-dark, #009e06);
+  transform: scale(1.1);
+}
+
+.quantity-display {
+  min-width: 28px;
+  text-align: center;
+  font-size: var(--font-size-md, 1rem);
+  font-weight: 600;
+  color: var(--color-text, #333);
+}
+
+/* ==========================================
    RESPONSIVO
    ========================================== */
 @media (max-width: 768px) {
