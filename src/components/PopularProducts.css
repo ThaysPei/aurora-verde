@@ -163,7 +163,7 @@
   background: var(--color-primary, #00b207);
   color: var(--color-white, #fff);
   border: none;
-  border-radius: var(--radius-full);
+  border-radius: 50px;
   font-size: var(--font-size-md, 1rem);
   font-weight: 600;
   transition: all 0.2s ease;
