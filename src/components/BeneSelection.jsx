@@ -1,46 +1,46 @@
-import React from "react";
-import "./BeneSelection.css";
-import truck from "../assets/truck.png";
-import headset from "../assets/headset.png";
-import box from "../assets/box.png";
-import bolsa from "../assets/bolsa.png";
+import './BeneSelection.css';
+import truck from '../assets/truck.png';
+import headset from '../assets/headset.png';
+import box from '../assets/box.png';
+import bolsa from '../assets/bolsa1.png';
 
-function BeneSelection() {
+const benefits = [
+  {
+    icon: truck,
+    title: 'Free Shipping',
+    description: 'Free Shipping on all your order',
+  },
+  {
+    icon: headset,
+    title: 'Customer Support 24/7',
+    description: 'Instant access to Support',
+  },
+  {
+    icon: box,
+    title: 'Money-Back Guarantee',
+    description: '30 Days Money-Back Guarantee',
+  },
+  {
+    icon: bolsa,
+    title: '100% Secure Payment',
+    description: 'We ensure your Money is save',
+  },
+];
+
+function Benefits() {
   return (
-    <section className="benefits">
-      <div className="benefit-card">
-        <img src={truck} alt="Frete Grátis" />
-        <div>
-          <h4>Free Shipping</h4>
-          <p>Free Shipping on all your order</p>
+    <section className="benefits" aria-label="Benefícios">
+      {benefits.map((benefit, index) => (
+        <div key={index} className="benefit-card">
+          <img src={benefit.icon} alt={benefit.title} />
+          <div>
+            <h4>{benefit.title}</h4>
+            <p>{benefit.description}</p>
+          </div>
         </div>
-      </div>
-
-      <div className="benefit-card">
-        <img src={headset} alt="Suporte" />
-        <div>
-          <h4>Customer Support 24/7</h4>
-          <p>Instant access to Support</p>
-        </div>
-      </div>
-
-      <div className="benefit-card">
-        <img src={box} alt="Pagamento Seguro" />
-        <div>
-          <h4>Money-Back Guarantee</h4>
-          <p>30 Days Money-Back Guarantee</p>
-        </div>
-      </div>
-
-      <div className="benefit-card">
-        <img src={bolsa} alt="Garantia" />
-        <div>
-          <h4>100% Secure Payment</h4>
-          <p>We ensure your Money is save</p>
-        </div>
-      </div>
+      ))}
     </section>
   );
 }
 
-export default BeneSelection;
+export default Benefits;
