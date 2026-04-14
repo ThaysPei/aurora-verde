@@ -28,8 +28,9 @@ function favoritesReducer(state, action) {
 export function FavoritesProvider({ children }) {
   const [favorites, dispatch] = useReducer(favoritesReducer, []);
 
-  const toggleFavorite = (product) => {
-    dispatch({ type: 'TOGGLE_FAVORITE', payload: product });
+  const toggleFavorite = (productOrId) => {
+    const id = typeof productOrId === 'object' ? productOrId.id : productOrId;
+    dispatch({ type: 'TOGGLE_FAVORITE', payload: { id } });
   };
 
   const clearFavorites = () => {
