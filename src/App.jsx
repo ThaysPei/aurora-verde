@@ -5,6 +5,7 @@ import Benefits from './components/BeneSelection';
 import Categories from './components/Categories';
 import PopularProducts from './components/PopularProducts';
 import Sale from './components/Sale';
+import CartDrawer from './components/CartDrawer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Categories />
       <PopularProducts />
       <Sale />
+      <CartDrawer />
     </>
   );
 }
