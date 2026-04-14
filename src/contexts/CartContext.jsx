@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useReducer, useState } from 'react';
 
 const CartContext = createContext();
 
@@ -27,6 +27,28 @@ function cartReducer(state, action) {
     }
 
     case 'REMOVE_ITEM': {
+      const itemToRemove = state.items.find(
+        (item) => item.id === action.payload.id,
+      );
+
+      if (itemToRemove && itemToRemove.quantity > 1) {
+        return {
+          ...state,
+          items: state.items.map((item) =>
+            item.id === action.payload.id
+              ? { ...item, quantity: item.quantity - 1 }
+              : item,
+          ),
+        };
+      }
+
+      return {
+        ...state,
+        items: state.items.filter((item) => item.id !== action.payload.id),
+      };
+    }
+
+    case 'REMOVE_ITEM_COMPLETELY': {
       return {
         ...state,
         items: state.items.filter((item) => item.id !== action.payload.id),
@@ -34,6 +56,13 @@ function cartReducer(state, action) {
     }
 
     case 'UPDATE_QUANTITY': {
+      if (action.payload.quantity <= 0) {
+        return {
+          ...state,
+          items: state.items.filter((item) => item.id !== action.payload.id),
+        };
+      }
+
       return {
         ...state,
         items: state.items.map((item) =>
@@ -59,6 +88,7 @@ const initialState = {
 
 export function CartProvider({ children }) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const addItem = (product) => {
     dispatch({ type: 'ADD_ITEM', payload: product });
@@ -68,12 +98,20 @@ export function CartProvider({ children }) {
     dispatch({ type: 'REMOVE_ITEM', payload: { id } });
   };
 
+  const removeItemCompletely = (id) => {
+    dispatch({ type: 'REMOVE_ITEM_COMPLETELY', payload: { id } });
+  };
+
   const updateQuantity = (id, quantity) => {
     dispatch({ type: 'UPDATE_QUANTITY', payload: { id, quantity } });
   };
 
   const clearCart = () => {
     dispatch({ type: 'CLEAR_CART' });
+  };
+
+  const closeCart = () => {
+    setIsCartOpen(false);
   };
 
   const totalItems = state.items.reduce(
@@ -92,10 +130,14 @@ export function CartProvider({ children }) {
         items: state.items,
         totalItems,
         totalPrice,
+        isCartOpen,
         addItem,
         removeItem,
+        removeItemCompletely,
         updateQuantity,
         clearCart,
+        setIsCartOpen,
+        closeCart,
       }}
     >
       {children}
