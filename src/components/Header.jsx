@@ -6,20 +6,24 @@ import logo3 from '../assets/coracao.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useCart } from '../contexts/CartContext';
+import { useSearch } from '../contexts/SearchContext';
 
 function Header() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const { totalItems, totalPrice } = useCart();
+  const [localTerm, setLocalTerm] = useState('');
+  const { totalItems, totalPrice, setIsCartOpen } = useCart();
+  const { search } = useSearch();
 
   const handleSearch = useCallback(
     (e) => {
       e.preventDefault();
-      if (searchTerm.trim()) {
-        console.log('Buscando:', searchTerm);
-      }
+      search(localTerm);
     },
-    [searchTerm],
+    [localTerm, search],
   );
+
+  const handleCartClick = () => {
+    setIsCartOpen(true);
+  };
 
   return (
     <header className="container">
@@ -33,8 +37,8 @@ function Header() {
           <input
             type="text"
             placeholder="Buscar produtos..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            value={localTerm}
+            onChange={(e) => setLocalTerm(e.target.value)}
             aria-label="Buscar produtos"
           />
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
@@ -44,7 +48,7 @@ function Header() {
 
       <img src={logo3} alt="Favoritos" className="logo terceira-logo" />
 
-      <div className="cart-info">
+      <div className="cart-info" onClick={handleCartClick} role="button" tabIndex={0} aria-label="Abrir carrinho">
         <div className="cart-icon-container">
           <img src={logo2} alt="Carrinho" className="logo segunda-logo" />
           <div className="divider" />
