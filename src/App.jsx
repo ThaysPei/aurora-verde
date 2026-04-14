@@ -1,18 +1,23 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
 import Header from './components/Header';
-import Nav from './components/Nav'
+import Nav from './components/Nav';
 import HeroSection from './components/HeroSection';
-import BeneSelection from './components/BeneSelection';
+import Benefits from './components/BeneSelection';
 import Categories from './components/Categories';
+import PopularProducts from './components/PopularProducts';
+import Sale from './components/Sale';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Header />
-    <Nav />
-     <HeroSection />
-     <BeneSelection />
-     <Categories />
-  </StrictMode>,
-)
+function App() {
+  return (
+    <>
+      <Header />
+      <Nav />
+      <HeroSection />
+      <Benefits />
+      <Categories />
+      <PopularProducts />
+      <Sale />
+    </>
+  );
+}
 
+export default App;
