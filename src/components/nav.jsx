@@ -1,14 +1,15 @@
 import './Nav.css';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const navLinks = [
-  { label: 'Home', href: '#' },
-  { label: 'Shop', href: '#' },
-  { label: 'Pages', href: '#' },
-  { label: 'Blog', href: '#' },
-  { label: 'About Us', href: '#' },
-  { label: 'Contact Us', href: '#' },
+  { label: 'Home', path: '/' },
+  { label: 'Shop', path: '/shop' },
+  { label: 'Pages', path: '/pages' },
+  { label: 'Blog', path: '/blog' },
+  { label: 'About Us', path: '/about-us' },
+  { label: 'Contact Us', path: '/contact-us' },
 ];
 
 function Nav() {
@@ -17,7 +18,7 @@ function Nav() {
       <ul className="nav-list">
         {navLinks.map((link) => (
           <li key={link.label}>
-            <a href={link.href}>{link.label}</a>
+            <Link to={link.path}>{link.label}</Link>
           </li>
         ))}
         <li className="telefone">

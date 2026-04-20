@@ -1,0 +1,200 @@
+.sponsors {
+  background-color: #f5f5f5;
+  padding: 4rem 2rem;
+}
+
+.sponsors-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.sponsors-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.sponsors-brands h3 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.sponsors-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.sponsor-logo {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 80px;
+}
+
+.sponsor-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sponsor-logo span {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #555;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.sponsor-logo:hover span {
+  opacity: 1;
+  color: #1a1a1a;
+}
+
+.sponsors-newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.follow-instagram {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.follow-instagram i {
+  font-size: 2.5rem;
+  color: #e4405f;
+}
+
+.follow-instagram span {
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.instagram-handle {
+  color: #4ade80;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.instagram-handle:hover {
+  color: #22c55e;
+}
+
+.newsletter-form h4 {
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.newsletter-form form {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #ddd;
+  border-radius: 25px 0 0 25px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.newsletter-form input:focus {
+  border-color: #4ade80;
+}
+
+.newsletter-form button {
+  padding: 0.9rem 1.8rem;
+  background-color: #4ade80;
+  color: #fff;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+  background-color: #22c55e;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.social-links a {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  color: #555;
+  font-size: 1.3rem;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.social-links a:hover {
+  background: #4ade80;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .sponsors-content {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsors-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsors {
+    padding: 3rem 1rem;
+  }
+
+  .sponsors-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .newsletter-form form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input {
+    border-radius: 25px;
+  }
+
+  .newsletter-form button {
+    border-radius: 25px;
+  }
+}
