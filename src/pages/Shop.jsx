@@ -64,7 +64,10 @@ function Shop() {
     return products
       .filter((p) => {
         // category
-        if (!selectedCategories.includes('all') && selectedCategories.length > 0) {
+        // If 'All' is selected (or no categories), do not filter by category
+        if (selectedCategories.includes('All') || selectedCategories.length === 0) {
+          // no-op: include all categories
+        } else {
           if (!selectedCategories.includes(p.category)) return false;
         }
         // price
