@@ -7,7 +7,7 @@ import ProductCard from '../components/ProductCard';
 import { useCart } from '../contexts/CartContext';
 import { useFavorites } from '../contexts/FavoritesContext';
 
-const ALL_CATS = ['all', 'frutas', 'verduras', 'legumes', 'graos', 'temperos'];
+const ALL_CATS = ['All', 'Fruits', 'Vegetables', 'Legumes', 'Grains', 'Seasonings'];
 const TAGS = ['healthy', 'low-fat', 'vegetarian', 'organic', 'kids'];
 
 function Shop() {
@@ -20,16 +20,16 @@ function Shop() {
   const minPrice = Math.min(...prices);
   const maxPrice = Math.max(...prices);
 
-  const [selectedCategories, setSelectedCategories] = useState(['all']);
+  const [selectedCategories, setSelectedCategories] = useState(['All']);
   const [priceRange, setPriceRange] = useState([minPrice, maxPrice]);
   const [ratingThreshold, setRatingThreshold] = useState(0);
   const [selectedTags, setSelectedTags] = useState([]);
   const [sortBy, setSortBy] = useState('latest');
 
   const toggleCategory = (cat) => {
-    if (cat === 'all') return setSelectedCategories(['all']);
+    if (cat === 'All') return setSelectedCategories(['All']);
     setSelectedCategories((prev) => {
-      const next = prev.includes('all') ? [] : [...prev];
+      const next = prev.includes('All') ? [] : [...prev];
       if (next.includes(cat)) return next.filter((c) => c !== cat);
       return [...next, cat];
     });
@@ -55,7 +55,7 @@ function Shop() {
   };
 
   const categoryCounts = useMemo(() => {
-    const counts = { all: products.length };
+    const counts = { All: products.length };
     ALL_CATS.slice(1).forEach((c) => (counts[c] = products.filter((p) => p.category === c).length));
     return counts;
   }, []);
@@ -93,7 +93,7 @@ function Shop() {
 
       <main className="shop-container">
         <section className="shop-layout">
-          <aside className="shop-sidebar" aria-label="Filtros">
+          <aside className="shop-sidebar" aria-label="Filters">
             <div className="filters">
               <h3>Categories</h3>
               <ul className="category-list">
@@ -165,7 +165,7 @@ function Shop() {
               </div>
 
               <button className="clear-btn" onClick={clearFilters}>
-                Limpar Filtros
+                Clear Filters
               </button>
             </div>
           </aside>
