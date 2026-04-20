@@ -1,12 +1,13 @@
 :root {
   --primary: #4caf50;
-  --bg: #fff;
+  --bg: #f8f8f8;
   --muted: #666;
 }
 
 .shop-container {
   padding: 2rem;
   min-height: 80vh;
+  background: var(--bg);
 }
 
 .shop-layout {
@@ -17,10 +18,10 @@
 
 .shop-sidebar {
   width: 280px;
-  background: rgba(76, 175, 80, 0.03);
-  border: 1px solid rgba(76, 175, 80, 0.08);
-  padding: 1rem;
-  border-radius: 8px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 .shop-main {
@@ -28,8 +29,16 @@
 }
 
 .filters h3 {
-  margin: 0.5rem 0;
-  color: var(--primary);
+  margin: 0 0 12px 0;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.shop-sidebar section {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .category-list {
@@ -39,13 +48,17 @@
 }
 
 .category-list li {
-  margin: 0.25rem 0;
+  margin: 0.5rem 0;
 }
 
 .category-list label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.category-list input[type='checkbox'] {
+  accent-color: var(--primary);
 }
 
 .category-list .count {
@@ -64,6 +77,36 @@
   background: transparent;
   position: absolute;
   left: 0;
+  height: 4px;
+}
+
+/* Track */
+.price-range input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+.price-range input[type='range']::-moz-range-track {
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+/* Thumb */
+.price-range input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin-top: -7px;
+}
+.price-range input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: none;
 }
 
 .price-label {
@@ -76,6 +119,10 @@
   margin: 0.25rem 0;
 }
 
+.rating-group input[type='radio'] {
+  accent-color: var(--primary);
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -84,27 +131,32 @@
 }
 
 .tag-btn {
-  background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 14px;
+  border-radius: 20px;
   cursor: pointer;
 }
 
 .tag-btn.active {
   background: var(--primary);
-  color: white;
+  color: #fff;
   border-color: var(--primary);
 }
 
 .clear-btn {
-  margin-top: 0.5rem;
+  margin-top: 16px;
+  width: 100%;
   background: transparent;
   border: 1px solid var(--primary);
   color: var(--primary);
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
   cursor: pointer;
+}
+.clear-btn:hover {
+  background: var(--primary);
+  color: #fff;
 }
 
 .results-header {
@@ -114,10 +166,101 @@
   margin-bottom: 1rem;
 }
 
+.results-count {
+  font-size: 15px;
+  color: #666;
+}
+
+.sort select {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+.product-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+.product-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  transform: translateY(-4px);
+}
+
+.out-of-stock-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e53935;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 5;
+}
+
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 13px;
+  margin-right: 6px;
+}
+
+.current-price {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.rating i {
+  color: #f5b301;
+  margin-right: 4px;
+}
+
+.card-icons {
+  display: flex;
+  gap: 8px;
+}
+.card-icons .icon-btn {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-to-cart {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 @media (max-width: 900px) {
