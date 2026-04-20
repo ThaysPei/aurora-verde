@@ -8,7 +8,7 @@ function Pages() {
       <Nav />
       <main style={{ padding: '2rem', minHeight: '80vh' }}>
         <h1>Pages</h1>
-        <p>Página adicional em desenvolvimento.</p>
+        <p>P├ígina adicional em desenvolvimento.</p>
       </main>
     </>
   );

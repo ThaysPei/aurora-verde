@@ -56,7 +56,7 @@ function ProductCard({ product, isFavorite, onToggleFavorite, onAddToCart, isInC
           <span className="current-price">R$ {product.price.toFixed(2)}</span>
         </div>
 
-        <div className="rating" aria-label={`Avaliação: ${rating} de 5 estrelas`}>
+        <div className="rating" aria-label={`Avalia├º├úo: ${rating} de 5 estrelas`}>
           {renderStars(rating)}
         </div>
       </div>

@@ -16,7 +16,7 @@ function PopularProducts() {
       <div className="popular-header">
         <h2>Popular Products</h2>
         <a href="#" className="view-all">
-          View All →
+          View All ÔåÆ
         </a>
       </div>
 

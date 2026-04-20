@@ -6,11 +6,11 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-section">
           <h3>Aurora Verde</h3>
-          <p>Sua loja de produtos naturais e sustentáveis.</p>
+          <p>Sua loja de produtos naturais e sustent├íveis.</p>
         </div>
 
         <div className="footer-section">
-          <h4>Links Rápidos</h4>
+          <h4>Links R├ípidos</h4>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/shop">Shop</a></li>

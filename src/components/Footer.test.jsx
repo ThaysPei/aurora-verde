@@ -3,12 +3,12 @@ import { describe, it, expect } from 'vitest';
 import Footer from '../components/Footer';
 
 describe('Footer', () => {
-  it('renderiza o título Aurora Verde', () => {
+  it('renderiza o t├¡tulo Aurora Verde', () => {
     render(<Footer />);
     expect(screen.getByText('Aurora Verde')).toBeInTheDocument();
   });
 
-  it('renderiza os links de navegação', () => {
+  it('renderiza os links de navega├º├úo', () => {
     render(<Footer />);
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Shop')).toBeInTheDocument();

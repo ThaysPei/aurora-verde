@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest';
 import Testimonials from '../components/Testimonials';
 
 describe('Testimonials', () => {
-  it('renderiza o título da seção', () => {
+  it('renderiza o t├¡tulo da se├º├úo', () => {
     render(<Testimonials />);
     expect(screen.getByText('What Our Clients Say')).toBeInTheDocument();
   });

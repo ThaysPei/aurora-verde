@@ -8,7 +8,7 @@ function AboutUs() {
       <Nav />
       <main style={{ padding: '2rem', minHeight: '80vh' }}>
         <h1>About Us</h1>
-        <p>Sobre nós em desenvolvimento.</p>
+        <p>Sobre n├│s em desenvolvimento.</p>
       </main>
     </>
   );

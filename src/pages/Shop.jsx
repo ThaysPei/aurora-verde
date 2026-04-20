@@ -131,7 +131,7 @@ function Shop() {
                   value={priceRange[1]}
                   onChange={(e) => handleMaxPrice(e.target.value)}
                 />
-                <div className="price-label">Price: R${priceRange[0]} — R${priceRange[1]}</div>
+                <div className="price-label">Price: R${priceRange[0]} ÔÇö R${priceRange[1]}</div>
               </div>
 
               <h3>Rating</h3>
