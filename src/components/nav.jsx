@@ -13,7 +13,7 @@ const navLinks = [
 
 function Nav() {
   return (
-    <nav className="nav-container" aria-label="Navegação principal">
+    <nav className="nav-container" aria-label="Navega├º├úo principal">
       <ul className="nav-list">
         {navLinks.map((link) => (
           <li key={link.label}>

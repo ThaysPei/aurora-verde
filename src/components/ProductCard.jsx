@@ -1,11 +1,32 @@
 import './PopularProducts.css';
-import { products } from '../data/products';
 import { useCart } from '../contexts/CartContext';
-import { useFavorites } from '../contexts/FavoritesContext';
+
+function renderStars(rating) {
+  const full = Math.floor(rating || 0);
+  const frac = (rating || 0) - full;
+  const half = frac >= 0.5;
+  const stars = [];
+  for (let i = 0; i < full; i++) {
+    stars.push(<i key={`f-${i}`} className="fas fa-star" />);
+  }
+  if (half) {
+    // use half star if available, otherwise use a semi-transparent full star
+    stars.push(<i key="half" className="fas fa-star-half-alt" />);
+  }
+  const total = full + (half ? 1 : 0);
+  for (let i = total; i < 5; i++) {
+    stars.push(<i key={`e-${i}`} className="far fa-star" />);
+  }
+  return stars;
+}
 
 function ProductCard({ product, isFavorite, onToggleFavorite, onAddToCart, isInCart }) {
+  const rating = typeof product.rating === 'number' ? product.rating : 0;
+
   return (
     <article className="product-card">
+      {product.outOfStock && <div className="out-of-stock-badge">Out of Stock</div>}
+
       <div className="card-icons">
         <button
           className={`icon-btn ${isFavorite ? 'favorited' : ''}`}
@@ -27,9 +48,16 @@ function ProductCard({ product, isFavorite, onToggleFavorite, onAddToCart, isInC
 
       <div className="product-info">
         <p className="product-title">{product.title}</p>
-        <p className="product-price">R$ {product.price.toFixed(2)}</p>
-        <div className="rating" aria-label="Avaliação: 3 de 5 estrelas">
-          ★★★☆☆
+
+        <div className="product-price">
+          {product.originalPrice !== null && (
+            <span className="original-price">R$ {product.originalPrice.toFixed(2)}</span>
+          )}
+          <span className="current-price">R$ {product.price.toFixed(2)}</span>
+        </div>
+
+        <div className="rating" aria-label={`Avalia├º├úo: ${rating} de 5 estrelas`}>
+          {renderStars(rating)}
         </div>
       </div>
 
@@ -86,35 +114,4 @@ function CartControls({ productId }) {
   );
 }
 
-function PopularProducts() {
-  const { addItem, items } = useCart();
-  const { toggleFavorite, isFavorite } = useFavorites();
-
-  const cartItemIds = items.map((item) => item.id);
-
-  return (
-    <section className="popular-container" aria-label="Produtos Populares">
-      <div className="popular-header">
-        <h2>Popular Products</h2>
-        <a href="#" className="view-all">
-          View All ÔåÆ
-        </a>
-      </div>
-
-      <div className="popular-grid">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            isFavorite={isFavorite(product.id)}
-            onToggleFavorite={toggleFavorite}
-            onAddToCart={addItem}
-            isInCart={cartItemIds.includes(product.id)}
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-export default PopularProducts;
+export default ProductCard;
